@@ -1,0 +1,816 @@
+*{
+    margin: 0;
+}
+@font-face {
+    font-family: 'Arlon Black';
+    src: url('./font/arlon-black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+}
+
+section{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/**/
+/* Zone du header */
+header{
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)),
+    url("../images/header.jpg");
+    background-position-y: 35%;
+    background-size: cover;
+    height: 31em;
+    filter: hue-rotate(18deg); 
+    color: white;
+    
+}
+
+/* Rendre le contenu centralisé */
+.content {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+    max-width: 1000px; /* Limiter la largeur du contenu */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Titres */
+.text h1 {
+    font-size: 48px;
+    color: #444;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #6a5acd;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.button:hover {
+    background-color: #5a4abf;
+    transform: scale(1.1);
+}
+
+/**/
+/* Zone About Me */
+nav{
+    display: flex;
+    color: white;
+    gap: 27em;
+    font-family: 'Arlon Black', sans-serif;
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2.5em;
+}
+nav h1{
+    font-weight: 900;
+    padding-left: 2.5em;
+    padding-top: 1em;
+}
+
+.about_header{
+    display: flex;
+    gap: 1.1em;
+    font-size: smaller;
+    padding-top: 2.5em;
+    color: white;
+}
+
+
+/* header texte situer en bas */
+.intro{
+    display: grid;
+    justify-content: center;
+    padding-top: 10em;
+    font-family: 'Arlon Black', sans-serif;
+}
+
+.intro h1{
+    font-weight: 800;
+    color: #585960;
+    font-size: 3em;
+}
+.intro h2{
+    font-size: 4em;
+    font-weight: 900;
+    color: #42464D;
+}
+
+.intro h3{
+    font-weight: lighter;
+    color: #3C3C3E;
+    letter-spacing: .5em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.intro button{
+    background-color: #695AA6; 
+    color: white;
+    border-radius: 2em;
+    border: none;
+    width: 9em;
+    height: 3em;
+    margin-top: 2em;
+}
+
+
+/**/
+/* Section images(section2) avec animation */
+.service{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Arlon Black', sans-serif;
+    padding-top: 10em;
+}
+.service h2{
+    padding-top: none;
+    color: #6F6F6F;
+
+}
+.s2_txt{
+    line-height: 1;
+    padding-bottom: 5%;
+    color: #6F6F6F;
+}
+.s2_txt p{
+    color: #695AA6;
+    font-family: 'Arlon Black', sans-serif;
+    padding-bottom: 2em;
+}
+.s2_txt h2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 100;
+    color: #6F6F6F;
+}
+/* section 2 grid */
+.s2_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 74%;
+    padding-left: 15.6%;
+    align-items: center;
+}
+
+.s2_grid > div {
+    border: #DEE2E6 solid 1px;
+    height: 13em;
+    width: 13em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #695AA6;
+    font-size: larger;
+    gap: 2em;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.s2_grid img {
+    margin-top: 8em;
+    height: 25%;
+    transition: transform 2s;
+    position: relative;
+    top: 1.5em;
+}
+
+.s2_grid p {
+    padding-top: 1em;
+    transition: transform 2s;
+    top: 0.1em;
+    position: relative;
+}
+
+.animation {
+    font-family: 'Poppins', sans-serif;
+    width: 90%;
+    font-size: smaller;
+    color: #6F6F6F;
+    position: relative;
+    transform: translateY(19em);
+    text-align: center;
+}
+/*changement d axe y pour l'animation des zones*/
+.s2_grid > div:hover img {
+    transform: translateY(-13.5em);
+}
+
+.s2_grid > div:hover .txt {
+    transform: translateY(-10.5em);
+    transition: 2.5s;
+}
+.s2_grid > div:hover .animation {
+    transition: 2.5s;
+    transform: translateY(-10.5em);
+}
+.s2_grid > div:hover p{
+    transition: 1.9s;
+    transform: translateY(-13.5em);
+}
+
+
+/**/
+/*image profil avec who i am*/
+.about-me {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 200px auto 0; /* Adds a 40px margin at the top */
+    color: #555;
+    font-family: 'Arial', sans-serif;
+    margin-left: 15%;
+}
+
+/* Profile Image Styling */
+.profile-pic {
+    width: 400px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Text container */
+.about-text {
+    max-width: 600px;
+}
+
+/* Section titles */
+.small-title {
+    font-size: 1rem;
+    color: #888;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #5F3DC4;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+/* Paragraph styling */
+.about-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Download button styling */
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #5F3DC4;
+    text-decoration: none;
+    border: 2px solid #5F3DC4;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #5F3DC4;
+    color: white;
+}
+
+
+/**/
+/* 3 images dans cadre*/
+.contentimg {
+    text-align: center;
+    padding: 5%;
+}
+
+/* Titres et sous-titres */
+.petit-titre {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #6a5acd;
+    margin-bottom: 30px;
+}
+
+/* Section Portfolio */
+.portfolio-section {
+    margin-bottom: 50px;
+}
+
+.portfolio-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.portfolio-grid img {
+    width: 420px;
+    height: 420px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/**/
+/* Section des prix */
+.prix-section {
+    margin-bottom: 80px;
+}
+
+/* Alignement des cartes */
+.prix-cards {
+    display: flex;
+    justify-content: center;
+    gap: 0px; /* Espace horizontal entre les cartes */
+    flex-wrap: wrap; /* Permet de passer sur plusieurs lignes si l'espace est limité */
+}
+
+/* Style des cartes */
+.prix-card {
+    width: 350px;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border: 1px solid lightgrey; /* Contour noir autour de la section */
+    text-align: center;
+}
+
+/* Style de l'icône de prix (image) */
+.prix-icon img {
+    width: 60px; /* Largeur par défaut */
+    height: 100px; /* Hauteur proportionnelle */
+    max-width: 100%; /* Évite le débordement */
+    margin-bottom: 20px;
+}
+
+/* Personnalisation de la couleur */
+.prix-card h3 {
+    font-size: 20px;
+    color: #6a5acd;
+    margin-bottom: 15px;
+}
+
+/* Liste des fonctionnalités */
+.prix-features {
+    list-style: none;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.prix-features li {
+    font-size: 14px;
+    color: #444;
+    margin: 30px 0;
+}
+
+.unavailable {
+    color: red;
+}
+
+/* Prix */
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+/*barre mauve */
+.background-mauve {
+    background-color: #695AA6;
+    padding: 20px; /* Pour ajouter de l'espace autour de la section */
+    margin-top: 5em;
+}
+
+.mauve{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+    height: 8em;
+    color: white;
+}
+
+/* Styles pour la colonne de texte dans la barre*/
+.text-column {
+    flex: 2; /* Permet de donner plus de largeur à la colonne de texte */
+    padding-right: 20px;
+}
+
+.text-column h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+    margin-right: 8%;
+}
+
+.text-column h4 {
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
+}
+
+/* Styles pour la colonne de bouton */
+.button-column {
+    flex: 1; /* Réduit la largeur de la colonne de bouton */
+    display: flex;
+    justify-content: center; /* Centre le bouton horizontalement */
+}
+
+.button-column button {
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #6a5acd;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.button-column button:hover {
+    background-color: #5a4abf;
+    transform: scale(1.1);
+}
+
+
+/**/
+/* Section Testimonials */
+
+.testimonials-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 13px;
+    color: grey;
+    margin-bottom: 10px;
+    margin-top: 80px;
+}
+
+.testimonials-section h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #6a1b9a;
+    margin-bottom: 40px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    padding: 1.5em;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    border: 2px solid lightgrey; /* Contour noir autour de la section */
+}
+
+
+.testimonial img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.testimonial-text {
+    text-align: left;
+}
+
+
+/**/
+/* Section CTA */
+.cta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+    height: 8em;
+    background-color: #695AA6;
+    margin-top: 5em;
+    color: white;
+}
+
+.cta h3{
+    font-family: 'Arlon Black', sans-serif;
+}
+.cta button{
+    font-family: 'Arlon Black', sans-serif;
+    letter-spacing: .1em;
+    font-size: 1em;
+    height: 3em;
+    width: 6em;
+    border-radius: 2px;
+    border: none;
+    background-color: #fff;
+}
+
+
+
+/**/
+/* Section Blog */
+.blog-post {
+    display: flex;
+    gap: 4em;
+    margin-bottom: 2em; 
+    padding: 1em;
+    border-radius: 8px;
+    flex-wrap: wrap; /* Permet d'ajuster l'affichage sur petits écrans */
+    
+}
+
+.post-image img {
+    width: 100%; /* Images plus petites sur mobile */
+    height: 100%;
+    max-width: 300px;
+    margin-left: 22.1%;
+}
+
+.post-content {
+    flex: 1;
+    text-align: left;
+    border: 2px solid lightgrey; /* Contour noir autour de la section */
+}
+
+.post-content h4 {
+    color: #6a52b3;
+    margin-bottom: 0.5em;
+}
+
+.read-more {
+    color: #6a52b3;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+
+/**/
+/*BAS DE PAGE contact me */
+/* Header container to keep logo and navbar in a row */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+}
+
+/* Nouille logo style */
+.nouille-container {
+    display: flex;
+    align-items: center;
+    margin-left: -36%;
+}
+
+.nouille {
+    font-size: 24px;
+    font-weight: bold;
+    color: #7f4ca5;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    margin-left: 100%;
+}
+
+.navbar a {
+    color: #666;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #7f4ca5;
+}
+
+/* Close Icon */
+.close {
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+}
+
+/* Main container centrer avec navbar et nouille avec margin*/
+.container {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin-top: 30px; /* Space from header */
+    margin-left: 25%;
+}
+
+/* Header Text centered */
+.contact-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #7f4ca5;
+    margin-top: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Contact Form */
+.contact-form {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.contact-form textarea {
+    width: 100%;
+    height: 180px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    resize: none;
+    color: #666;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #7f4ca5;
+    border: 2px solid #7f4ca5;
+    background: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #7f4ca5;
+    color: #fff;
+}
+
+/* Footer */
+.footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Social Media Icon */
+.social-media {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-media a {
+    color: #aaa;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    color: #7f4ca5;
+}
+
+
+/**/
+/*footer*/
+.footer {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.icon {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.icon img {
+    width: 35px; /* Ajustez la taille de l'image */
+    height: 35px;
+}
+
+.icon:hover {
+    background-color: #333;
+}
+
+.icon:hover img {
+    filter: brightness(0) invert(1); /* Change la couleur de l'image au survol */
+}
+
+
+/**/
+/* Zone avec les responsables */
+@media (max-width: 1200px) {
+    body {
+        max-width: 1100px;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .gallery {
+        flex-direction: column; /* Les images s'empilent sur petits écrans */
+        gap: 10px;
+    }
+
+    .image-container {
+        width: 150px; /* Réduire la taille des images sur mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .image-container {
+        width: 120px; /* Réduction encore plus petite sur très petit écran */
+    }
+}
